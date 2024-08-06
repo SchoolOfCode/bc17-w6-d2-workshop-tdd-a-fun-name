@@ -7,7 +7,7 @@ import {test, expect} from "vitest";
 //     expect(calculateScrabbleScore("A")).toBe(1)
 // })
 
-
+// test each letter
 test.each([
     ["A", 1],
     ["E", 1],
@@ -38,3 +38,14 @@ test.each([
   ])('calculates the score for %s as %i', (a, expectedScore) => {
     expect(calculateScrabbleScore(a)).toBe(expectedScore);
   });
+
+//test some dummy words
+test.each([
+    ["dilly", 9],
+    ["hello", 8],
+    ["zebra", 16],
+  ])('calculates the score for %s as %i', (a, expectedScore) => {
+    expect(calculateScrabbleScore(a)).toBe(expectedScore);
+  });
+
+// Input validation

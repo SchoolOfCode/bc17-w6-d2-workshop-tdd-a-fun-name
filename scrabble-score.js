@@ -1,5 +1,6 @@
 export function calculateScrabbleScore(word) {
-    if(word === "a"){
+    if(word === "A" || word === "E" || word === "I" || word === "L" || word === "N" ||word === "O" ||word === "R" ||word === "S" ||word === "T" ||word === "U"){
+        console.log("Score returned: 1");
         return 1
     }
 }

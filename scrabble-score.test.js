@@ -35,6 +35,6 @@ test.each([
     ["X", 8],
     ["Q", 10],
     ["Z", 10],
-  ])('calculates the score for %i + %i as %i', (a, expectedScore) => {
+  ])('calculates the score for %s as %i', (a, expectedScore) => {
     expect(calculateScrabbleScore(a)).toBe(expectedScore);
   });

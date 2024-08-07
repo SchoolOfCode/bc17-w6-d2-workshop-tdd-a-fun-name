@@ -35,8 +35,8 @@ test.each([
     ["X", 8],
     ["Q", 10],
     ["Z", 10],
-])('calculates the score for %s as %i', (a, expectedScore) => {
-    expect(calculateScrabbleScore(a)).toBe(expectedScore);
+])('calculates the score for %s as %i', (letter, expectedScore) => {
+    expect(calculateScrabbleScore(letter)).toBe(expectedScore);
 });
 
 //test some dummy words
@@ -44,8 +44,8 @@ test.each([
     ["dilly", 9],
     ["hello", 8],
     ["zebra", 16],
-])('calculates the score for %s as %i', (a, expectedScore) => {
-    expect(calculateScrabbleScore(a)).toBe(expectedScore);
+])('calculates the score for %s as %i', (word, expectedScore) => {
+    expect(calculateScrabbleScore(word)).toBe(expectedScore);
 });
 
 // Input validation

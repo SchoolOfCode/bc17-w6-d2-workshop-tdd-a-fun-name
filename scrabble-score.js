@@ -1,4 +1,9 @@
 export function calculateScrabbleScore(word) {
+// checks for valid input upper/lower case chars
+    const regex = /^[a-zA-Z]+$/
+    if(!regex.test(word)){
+        throw new Error("Enter a valid word containing only alphabetic characters")
+    }
     // Convert the word to uppercase to handle case-insensitivity
     const wordToLetters = word.toUpperCase().split('');
 
@@ -54,6 +59,7 @@ export function calculateScrabbleScore(word) {
 
     return score;
 }
+
 
 //console.log(calculateScrabbleScore('Dilly')); // Expected output: 9 (2+1+1+1+4)
 

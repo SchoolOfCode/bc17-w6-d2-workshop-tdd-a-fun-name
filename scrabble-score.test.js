@@ -1,4 +1,4 @@
-import { calculateScrabbleScore } from "./scrabble-score";
+import {calculateScrabbleScore} from "./scrabble-score";
 import {test, expect} from "vitest";
 
 
@@ -35,17 +35,32 @@ test.each([
     ["X", 8],
     ["Q", 10],
     ["Z", 10],
-  ])('calculates the score for %s as %i', (a, expectedScore) => {
+])('calculates the score for %s as %i', (a, expectedScore) => {
     expect(calculateScrabbleScore(a)).toBe(expectedScore);
-  });
+});
 
 //test some dummy words
 test.each([
     ["dilly", 9],
     ["hello", 8],
     ["zebra", 16],
-  ])('calculates the score for %s as %i', (a, expectedScore) => {
+])('calculates the score for %s as %i', (a, expectedScore) => {
     expect(calculateScrabbleScore(a)).toBe(expectedScore);
-  });
+});
 
 // Input validation
+//enter valid character
+    test.each([
+        ['dilly123', 'Enter a valid word containing only alphabetic characters'],
+        ['@#$', 'Enter a valid word containing only alphabetic characters'],
+        ['hello', 8],
+        ['zebra', 16],
+    ])('should handle input %s and expect %s', (word, expected) => {
+        if (typeof expected === 'string') {
+            // Check if function throws an error with the expected message
+            expect(() => calculateScrabbleScore(word)).toThrow(expected);
+        } else {
+            // Check if function returns the expected score
+            expect(calculateScrabbleScore(word)).toBe(expected);
+        }
+});
